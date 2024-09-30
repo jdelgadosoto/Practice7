@@ -1,0 +1,6 @@
+@Practice7_HostAddress = http://localhost:5095
+
+GET {{Practice7_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

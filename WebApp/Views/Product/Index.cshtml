@@ -1,0 +1,32 @@
+﻿@model List<Model.Models.Products>
+
+<h3>Products</h3>
+<br />
+
+@if (Model != null)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Price</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td><a class="btn btn-link" asp-controller="Product" asp-action="updateProduct" asp-route-Id="@item.Id">Edit</a> </td>
+                    <td><a class="btn btn-link" asp-controller="Product" asp-action="deleteProduct" asp-route-Id="@item.Id">Delete</a> </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<br />
+<a class="btn btn-primary" asp-controller="Product" asp-action="createProduct">Create</a>
